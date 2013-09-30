@@ -6,7 +6,7 @@
 #    By: jblanche <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/09/25 12:42:57 by jblanche          #+#    #+#              #
-#    Updated: 2013/09/30 17:27:34 by jblanche         ###   ########.fr        #
+#    Updated: 2013/09/30 17:42:35 by jblanche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,13 @@ SRCS = ./srcs/main.c ./srcs/check_map.c ./srcs/ft_liballoc.c \
 	   ./srcs/ft_libwrite.c ./srcs/create_map.c ./srcs/map_info.c
 
 LSRCS = ./libs/ft_putchar.c ./libs/ft_putnbr.c ./libs/ft_putstr.c \
-		./libs/ft_strcmp.c ./libs/ft_strlen.c ./libs/ft_swap.c
+		./libs/ft_strcmp.c ./libs/ft_strlen.c ./libs/ft_swap.c \
+		./libs/ft_char_to_int.c
 
 HDRS = ./includes/
 
-LOBJS = ft_putchar.o ft_putnbr.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
+LOBJS = ft_putchar.o ft_putnbr.o ft_putstr.o ft_strcmp.o ft_strlen.o \
+		ft_swap.o
 
 FLAGS = -Wall -Wextra -Werror
 
