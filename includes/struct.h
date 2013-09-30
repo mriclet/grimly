@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:34:26 by mriclet           #+#    #+#             */
-/*   Updated: 2013/09/30 16:12:30 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 16:41:07 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 typedef struct	s_info
 {
-	char 		param[5];
+	char 		param[4];
 	int			nb_lines;
 	int			nb_cols;
 	char		*str;
