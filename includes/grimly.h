@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:21:19 by mriclet           #+#    #+#             */
-/*   Updated: 2013/09/30 16:32:28 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 17:26:51 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ char				*ft_malloc(size_t size);
 /*creat_map*/
 struct s_info		*ft_getinfos(char *map1D);
 char				**ft_getmap(char *map1D);
+/*map_info*/
+int					ft_char_to_int(char *str);
 
 #endif		/* !__GRIMLY_H__ */

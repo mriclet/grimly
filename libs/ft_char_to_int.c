@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   ft_char_to_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/09/30 15:55:22 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/30 17:36:02 by jblanche         ###   ########.fr       */
+/*   Created: 2013/09/30 17:01:06 by jblanche          #+#    #+#             */
+/*   Updated: 2013/09/30 17:01:23 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
-
-int		check_map(*str)
+int		ft_char_to_int(char *str)
 {
-	return (0);
+	int result;
+	int sign;
+	int i;
+	
+	result = 0;
+	sign = 1;
+	i = 0;
+	if (str[0] == '-')
+	{
+		sign = - 1;  
+		i++;
+	}
+	while (str[i] || str[i] != ',')
+	{
+		result = result * 10 + str[i] - 48;
+		i++;
+	}
+	return (sign * result);
 }
