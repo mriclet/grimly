@@ -6,7 +6,7 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/30 18:32:22 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 18:41:44 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ t_info		*map_info(t_info *info)
 	int		j;
 	char	*nb_cols;
 	char	*nb_lines;
-	int		length_cols;
-	int		length_lines;
+	int		length_col;
+	int		length_line;
 	
-	length_cols = 0;
-	length_lines = 0;
+	length_col = 0;
+	length_line = 0;
 	i = 0;
 	while (info->str[i] != '\n')
 		i++;
@@ -37,7 +37,7 @@ t_info		*map_info(t_info *info)
 		length_col++;
 		i--;
 	}
-	nb_cols = (char *)malloc(sizeof (*nb_cols) * length_cols);
+	nb_cols = (char *)malloc(sizeof (*nb_cols) * length_col);
 	j = i;
 	while (j != length_col)
 	{
@@ -46,10 +46,10 @@ t_info		*map_info(t_info *info)
 	}
 	while (i != 0)
 	{
-		length_lines++;
+		length_line++;
 		i--;
 	}
-	nb_lines = (char *)malloc(sizeof (*nb_lines) * length_lines);
+	nb_lines = (char *)malloc(sizeof (*nb_lines) * length_line);
 	while (info->str[i] != 'x')
 	{
 		nb_lines[i] = info->str[i];
