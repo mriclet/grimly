@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/09/30 16:59:53 by mriclet          ###   ########.fr       */
+/*   Updated: 2013/09/30 18:34:26 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ int			main(int ac, char **av)
 	ft_putstr("Malloc ok\n");
 	if (ac > 1)
 		info->str = av[1];
-	ft_putstr("Info->str ok\n");
+	info = map_info(info);
+	ft_putstr(info->param);
+/*	ft_putstr("Info->str ok\n");
 	info = ft_gettab(info);
-	ft_putstr("Gettab ok\n");
+	ft_putstr("Gettab ok\n");*/
 	return (OK);
 }

@@ -6,7 +6,7 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/30 18:26:41 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 18:32:22 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ t_info		*map_info(t_info *info)
 	}
 	info->nb_cols = ft_char_to_int(nb_cols);
 	info->nb_lines = ft_char_to_int(nb_lines);
-	return (s_info);
+	return (info);
 }

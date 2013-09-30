@@ -6,13 +6,13 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 15:55:22 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/30 17:36:02 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 18:35:27 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-int		check_map(*str)
+int		check_map(char *str)
 {
 	return (0);
 }
