@@ -6,12 +6,16 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:34:26 by mriclet           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2013/09/30 16:40:00 by mriclet          ###   ########.fr       */
+=======
+/*   Updated: 2013/09/30 16:41:07 by jblanche         ###   ########.fr       */
+>>>>>>> cbe052f0506b0c568959bc327328586c4ba95755
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		__STRUCT_H__
-# define	__STRUCT_H__
+#ifndef		STRUCT_H__
+# define	STRUCT_H__
 
 typedef struct	s_info
 {
@@ -21,6 +25,6 @@ typedef struct	s_info
 	char		*str;
 	char		**map;
 	char		*file;
-}t_info;
+}				t_info;
 
 #endif
