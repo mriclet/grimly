@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:21:19 by mriclet           #+#    #+#             */
-/*   Updated: 2013/09/30 18:04:27 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 18:27:33 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ t_info				*ft_gettab(t_info *info);
 char				**ft_getmap(char *map1D);
 /*map_info*/
 int					ft_char_to_int(char *str);
+/*main*/
+t_info				*map_info(t_info *info);
 
 #endif		/* !__GRIMLY_H__ */
