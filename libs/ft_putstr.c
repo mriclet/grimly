@@ -6,9 +6,11 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/16 14:03:20 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/17 13:29:24 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 16:31:31 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
