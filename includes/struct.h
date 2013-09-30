@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/09/30 14:52:11 by mriclet          ###   ########.fr       */
+/*   Created: 2013/09/30 14:34:26 by mriclet           #+#    #+#             */
+/*   Updated: 2013/09/30 14:50:34 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"grimly.h"
+#ifndef		__STRUCT_H__
+# define	__STRUCT_H__
 
-int			main(int ac, char **av)
+typedef struct	s_info
 {
-	ft_getinfos(av[1]);
-	ac = ac;
-	av = av;
-	return (OK);
-}
+	int			nb_lines;
+	int			nb_cols;
+	char		**map;
+	char		*file;
+}t_info;
+
+#endif

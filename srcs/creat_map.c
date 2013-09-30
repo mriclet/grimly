@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   creat_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/09/30 14:52:11 by mriclet          ###   ########.fr       */
+/*   Created: 2013/09/30 14:33:47 by mriclet           #+#    #+#             */
+/*   Updated: 2013/09/30 15:37:48 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"grimly.h"
+#include		<stdlib.h>
 
-int			main(int ac, char **av)
+#include		"struct.h"
+#include		"grimly.h"
+
+char			**ft_getmap(char *map1D)
 {
-	ft_getinfos(av[1]);
-	ac = ac;
-	av = av;
-	return (OK);
+	char 		**map2D;
+
+	map1D = map1D;
+	*map2D = ft_malloc(sizeof (char));
+	return (map2D);
+}
+
+t_info			*ft_getinfos(char *map1D)
+{
+	t_info		*info;
+
+	info = malloc(sizeof (t_info));
+	if (info == NULL)
+		ft_putstr("Erreur: ft_getinfos return (-1);\n");
+	info->map = ft_getmap(map1D);
+	map1D = map1D;
+	return (info);
 }

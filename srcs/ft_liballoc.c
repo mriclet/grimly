@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_liballoc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/09/30 14:52:11 by mriclet          ###   ########.fr       */
+/*   Created: 2013/09/30 14:54:18 by mriclet           #+#    #+#             */
+/*   Updated: 2013/09/30 15:31:57 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include	<stdlib.h>
+
 #include	"grimly.h"
 
-int			main(int ac, char **av)
+char		*ft_malloc(size_t size)
 {
-	ft_getinfos(av[1]);
-	ac = ac;
-	av = av;
-	return (OK);
+	char	*ret;
+
+	ret = malloc(size);
+	if (ret == NULL)
+		ft_putstr("Erreur: ft_malloc return(-1);\n");
+	return (ret);
 }
