@@ -6,7 +6,7 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/30 18:11:09 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 18:12:52 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_info		*map_info(char *str)
 	char	*nb_lines;
 	int		length_cols;
 	int		length_lines;
-
+	
+	info = malloc(sizeof (t_info));
 	length_cols = 0;
 	length_lines = 0;
 	i = 0;
