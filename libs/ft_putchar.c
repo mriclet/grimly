@@ -6,11 +6,13 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/17 13:17:23 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/17 13:20:46 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 15:48:19 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{ 
+#include	<unistd.h>
+
+void		ft_putchar(char c)
+{
 	write(1, &c, 1);
 }
