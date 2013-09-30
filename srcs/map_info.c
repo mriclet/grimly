@@ -6,7 +6,7 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/30 17:36:25 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 18:11:09 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_info		*map_info(char *str)
 	length_cols = 0;
 	length_lines = 0;
 	i = 0;
-	while (str[i])
+	while (str[i] != '\n')
 		i++;
 	info->param[4] = str[i--];
 	info->param[3] = str[i--];
