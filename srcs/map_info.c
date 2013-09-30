@@ -6,12 +6,33 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/30 18:41:44 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/09/30 18:59:56 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
 #include "grimly.h"
+/*
+int		ft_char_to_int(char *str)
+{
+   int sign;
+   int i;
+   int	result;
+
+    result = 0;
+    sign = 1;
+    i = 0;
+     if (str[0] == '-')
+     {
+         sign = - 1;
+         i++;
+    }
+    while (str[i] || str[i] != ',')
+    {
+         result = result * 10 + str[i] - 48;
+        i++;
+    }
+    return (sign * result);
+}*/
 
 t_info		*map_info(t_info *info)
 {
