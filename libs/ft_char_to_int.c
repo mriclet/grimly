@@ -6,7 +6,7 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 17:01:06 by jblanche          #+#    #+#             */
-/*   Updated: 2013/09/30 19:00:03 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 16:47:28 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_char_to_int(char *str)
 		sign = - 1;  
 		i++;
 	}
-	while (str[i] || str[i] != ',')
+	while (str[i])
 	{
 		result = result * 10 + str[i] - 48;
 		i++;

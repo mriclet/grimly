@@ -6,7 +6,7 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/10/01 13:46:40 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 16:48:14 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ t_info		*map_info(t_info *info)
 	int		length_col;
 	int		length_line;
 
-	ft_putstr(info->str);
-	ft_putchar('\n');
 	length_col = 0;
 	length_line = 0;
 	i = 0;
 	while (info->str[i] != '\n')
 		i++;
+	i -= 1;
+	info->param = malloc(sizeof (char) *4);
 	info->param[4] = info->str[i--];
 	info->param[3] = info->str[i--];
 	info->param[2] = info->str[i--];
@@ -38,19 +38,18 @@ t_info		*map_info(t_info *info)
 		length_col++;
 		i--;
 	}
-	nb_cols = (char *)malloc(sizeof (*nb_cols) * length_col);
-	j = i;
+	nb_cols = (char *)malloc(sizeof (*nb_cols) * (length_col + 1));
+	j = 0;
 	while (j != length_col)
 	{
-		nb_cols[j] = info->str[j];
+		nb_cols[j] = info->str[++i];
 		j++;
 	}
-	while (i != 0)
-	{
+	nb_cols[j] = '\0';
+	while (info->str[length_line] != 'x')
 		length_line++;
-		i--;
-	}
 	nb_lines = (char *)malloc(sizeof (*nb_lines) * length_line);
+	i = 0;
 	while (info->str[i] != 'x')
 	{
 		nb_lines[i] = info->str[i];
