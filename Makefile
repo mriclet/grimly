@@ -6,7 +6,7 @@
 #    By: jblanche <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/09/25 12:42:57 by jblanche          #+#    #+#              #
-#    Updated: 2013/10/01 17:37:57 by jblanche         ###   ########.fr        #
+#    Updated: 2013/10/01 19:09:54 by mriclet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = grimly
 
 LIB = libft.a
 
-SRCS = ./srcs/main.c ./srcs/check_map.c ./srcs/ft_liballoc.c ./srcs/map_info.c
+SRCS = ./srcs/main.c ./srcs/check_map.c ./srcs/ft_liballoc.c ./srcs/map_info.c \
+		./srcs/get_tab.c
 
 LSRCS = ./libs/ft_putchar.c ./libs/ft_putnbr.c ./libs/ft_putstr.c \
 		./libs/ft_strcmp.c ./libs/ft_strlen.c ./libs/ft_swap.c \
