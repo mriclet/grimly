@@ -6,7 +6,7 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/10/01 12:59:13 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 13:46:40 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_info		*map_info(t_info *info)
 	int		length_line;
 
 	ft_putstr(info->str);
+	ft_putchar('\n');
 	length_col = 0;
 	length_line = 0;
 	i = 0;
