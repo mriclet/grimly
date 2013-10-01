@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/01 18:04:08 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 19:04:59 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,33 @@
 #include <sys/uio.h>
 #include <unistd.h>
 #include <stdio.h>
-int		make_param_line(int ac, char *buf, t_info *info);
+#define TOT_SIZE ((info->nb_lines + 1) * info->nb_cols + (info->nb_lines + 1))
+void		make_param_line(char *buf, t_info *info);
+void		map_info(t_info *info);
+void		make_map_1D(char *buf, t_info *info);
 
-int		main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_info	*info;
 	char	*buf;
 
+	ac = ac;
 	info = malloc(1 * sizeof (t_info));
 	info->file = av[1];
-	make_param_line(ac, buf, info);
-	info = map_info(info);
+	make_param_line(buf, info);
+	free(buf);
+	map_info(info);
+	make_map_1D(buf, info);
 	printf("params =>%s\n", info->param);
 	printf("cols =>%d\n", info->nb_cols);
 	printf("lines =>%d\n", info->nb_lines);
-	printf("str =>%s", info->param_line);
+	printf("param_line =>%s", info->param_line);
+	printf("str =\n%s", info->str);
+	free(buf);
 	return (PASS);
 }
 
-int		make_param_line(int ac, char *buf, t_info *info)
+void		make_param_line(char *buf, t_info *info)
 {
 	int		fd;
 	int		j;
@@ -43,20 +51,39 @@ int		make_param_line(int ac, char *buf, t_info *info)
 	i = 0;
 	j = 0;
 	buf = (char*)malloc(18 * sizeof (*buf));
-	if (ac > 1)
+	fd = open(info->file, O_RDWR);
+	read(fd, buf, 18);
+	while (buf[i] != '\n')
+		i++;
+	info->param_line = malloc(sizeof(char) * i);
+	while (j <= i)
 	{
-		fd = open(info->file, O_RDWR);
-		read(fd, buf, 18);
-		while (buf[++i] != '\n')
-			info->param_line = malloc(sizeof(char) * (i + 1));
-		while (j <= i)
-		{
-			info->param_line[j] = buf[j];
-			j++;
-		}
-		info->param_line[i + 1] = '\0';
+		info->param_line[j] = buf[j];
+		j++;
 	}
-	else
-		return (FAIL);
-	return (PASS);
+	info->param_line[j] = '\0';
+}
+
+void		make_map_1D(char *buf, t_info *info)
+{
+	int		fd;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	buf = (char*)malloc(sizeof (*buf) * TOT_SIZE);
+	fd = open(info->file, O_RDWR);
+	read(fd, buf, TOT_SIZE);
+	while (buf[i] != '\n')
+		i++;
+	i++;
+	info->str = (char*)malloc(sizeof (*buf) * TOT_SIZE);
+	while (buf[i])
+	{
+		info->str[j] = buf[i];
+		j++;
+		i++;
+	}
+	info->str[i] = '\0';
 }
