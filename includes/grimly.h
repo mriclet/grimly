@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:21:19 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/01 17:50:52 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 18:09:57 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define		PASS	1
 #define		FAIL	-1
 
-/*ft_libwrite*/
+/*ALL*/
 void				ft_putstr(char *str);
 void				ft_putchar(char c);
 /*ft_liballoc*/
@@ -29,7 +29,5 @@ t_info				*ft_gettab(t_info *info);
 char				**ft_getmap(char *map1D);
 /*map_info*/
 int					ft_char_to_int(char *str);
-/*main*/
-t_info				*map_info(t_info *info);
 
 #endif		/* !__GRIMLY_H__ */

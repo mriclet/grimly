@@ -6,14 +6,14 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/10/01 17:46:22 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 18:07:41 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "grimly.h"
 void	store_param(t_info *info, int i);
 
-t_info		*map_info(t_info *info)
+void	map_info(t_info *info)
 {
 	int		i;
 	char	*nb_lines;
@@ -37,7 +37,6 @@ t_info		*map_info(t_info *info)
 	}
 	info->nb_lines = ft_char_to_int(nb_lines);
 	free(nb_lines);
-	return (info);
 }
 
 void	store_param(t_info *info, int i)
