@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/01 19:04:59 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 19:06:09 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int			main(int ac, char **av)
 	free(buf);
 	map_info(info);
 	make_map_1D(buf, info);
+	free(buf);
 	printf("params =>%s\n", info->param);
 	printf("cols =>%d\n", info->nb_cols);
 	printf("lines =>%d\n", info->nb_lines);
 	printf("param_line =>%s", info->param_line);
 	printf("str =\n%s", info->str);
-	free(buf);
 	return (PASS);
 }
 
