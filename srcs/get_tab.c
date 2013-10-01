@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:24:22 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/01 18:40:34 by mriclet          ###   ########.fr       */
+/*   Updated: 2013/10/01 19:14:25 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ t_info			*ft_gettab(t_info *info)
 			++j;
 			k = 0;
 			info->map[j] = ft_malloc(info->nb_cols * sizeof(char));
-			ft_putstr(info->map[j - 1]);
 		}
 		info->map[j][k] = info->str[i];
 		++k;
 		++i;
 	}
+	info->map[j][k] = 0;
 	return (info);
 }
