@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:21:19 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/01 18:09:57 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 19:56:03 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@
 #include	<stdlib.h>
 #include	"struct.h"
 
-#define		PASS	1
-#define		FAIL	-1
+#define		PASS		1
+#define		FAIL		-1
+#define		BUFF_SIZE	512
 
 /*ALL*/
 void				ft_putstr(char *str);
 void				ft_putchar(char c);
+int					ft_strlen(char *str);
 /*ft_liballoc*/
+char				*ft_addstr(char *str, char *add);
+char				*ft_readin();
 char				*ft_malloc(size_t size);
 /*creat_map*/
 t_info				*ft_gettab(t_info *info);
