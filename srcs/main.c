@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/01 17:01:56 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 18:04:08 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,50 +15,48 @@
 #include <sys/types.h>
 #include <sys/uio.h>
 #include <unistd.h>
+#include <stdio.h>
+int		make_param_line(int ac, char *buf, t_info *info);
 
-void	ft_putnbr(int n);
-
-/*                  Main TEST                */
-int			main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	t_info	*info;
 	char	*buf;
+
+	info = malloc(1 * sizeof (t_info));
+	info->file = av[1];
+	make_param_line(ac, buf, info);
+	info = map_info(info);
+	printf("params =>%s\n", info->param);
+	printf("cols =>%d\n", info->nb_cols);
+	printf("lines =>%d\n", info->nb_lines);
+	printf("str =>%s", info->param_line);
+	return (PASS);
+}
+
+int		make_param_line(int ac, char *buf, t_info *info)
+{
 	int		fd;
 	int		j;
 	int		i;
-	
+
 	i = 0;
-	j = 0;	
-	info = malloc(1 * sizeof (t_info));
-	info->file = av[1];
-	buf = (char*)malloc(18 * sizeof(*buf));
-	ft_putstr("Malloc ok\n");
+	j = 0;
+	buf = (char*)malloc(18 * sizeof (*buf));
 	if (ac > 1)
 	{
 		fd = open(info->file, O_RDWR);
 		read(fd, buf, 18);
-		while (buf[i] != '\n')
-			i++;
-		info->str = malloc(sizeof(char) * (i + 1));
+		while (buf[++i] != '\n')
+			info->param_line = malloc(sizeof(char) * (i + 1));
 		while (j <= i)
 		{
-			info->str[j] = buf[j];
+			info->param_line[j] = buf[j];
 			j++;
 		}
-		info->str[i + 1] = '\0';
+		info->param_line[i + 1] = '\0';
 	}
 	else
-	{
-		ft_putstr("ARG Error\n");
-		return (NOK);
-	}
-	info = map_info(info);
-/*	printf("params =>%s\n", info->param);
-	printf("lines =>%d\n", info->nb_cols);
-	printf("cols =>%d\n", info->nb_lines);
-	printf("str =>%s\n", info->str);*/
-/*	ft_putstr("Info->str ok\n");
-	info = ft_gettab(info);
-	ft_putstr("Gettab ok\n");*/
-	return (OK);
+		return (FAIL);
+	return (PASS);
 }

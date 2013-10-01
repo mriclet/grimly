@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:21:19 by mriclet           #+#    #+#             */
-/*   Updated: 2013/09/30 18:59:58 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 17:50:52 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include	<stdlib.h>
 #include	"struct.h"
 
-#define		OK	1
-#define		NOK	-1
+#define		PASS	1
+#define		FAIL	-1
 
 /*ft_libwrite*/
 void				ft_putstr(char *str);

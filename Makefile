@@ -6,7 +6,7 @@
 #    By: jblanche <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/09/25 12:42:57 by jblanche          #+#    #+#              #
-#    Updated: 2013/09/30 18:45:02 by jblanche         ###   ########.fr        #
+#    Updated: 2013/10/01 17:37:57 by jblanche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,9 @@ $(LIB):
 
 $(NAME): $(LIB)
 	gcc $(FLAGS)  $(SRCS) -L. -lft -I $(HDRS) -o $(NAME)
+
+debug: $(LIB)
+	gcc -g $(FLAGS)  $(SRCS) -L. -lft -I $(HDRS) -o $(NAME)
 
 clean:
 	/bin/rm -f $(LOBJS) $(LIB)
