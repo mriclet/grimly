@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/01 16:51:18 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 17:01:56 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,15 @@ int			main(int ac, char **av)
 	i = 0;
 	j = 0;	
 	info = malloc(1 * sizeof (t_info));
+	info->file = av[1];
 	buf = (char*)malloc(18 * sizeof(*buf));
 	ft_putstr("Malloc ok\n");
 	if (ac > 1)
 	{
-		fd = open(av[1], O_RDWR);
+		fd = open(info->file, O_RDWR);
 		read(fd, buf, 18);
 		while (buf[i] != '\n')
 			i++;
-		printf("i = %d\n", i);
-		ft_putchar(buf[12]);
-		printf("buf =>%s\n", buf);
 		info->str = malloc(sizeof(char) * (i + 1));
 		while (j <= i)
 		{

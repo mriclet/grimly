@@ -6,7 +6,7 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/10/01 16:48:14 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/01 17:02:11 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ t_info		*map_info(t_info *info)
 	while (info->str[i] != '\n')
 		i++;
 	i -= 1;
-	info->param = malloc(sizeof (char) *4);
+//	store_param(info, i);
+	info->param = malloc(sizeof (char) * 4);
 	info->param[4] = info->str[i--];
 	info->param[3] = info->str[i--];
 	info->param[2] = info->str[i--];
@@ -59,3 +60,5 @@ t_info		*map_info(t_info *info)
 	info->nb_lines = ft_char_to_int(nb_lines);
 	return (info);
 }
+
+
