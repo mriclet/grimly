@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/02 12:03:34 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/02 13:37:25 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 void		make_param_line(char *buf, t_info *info);
 void		map_info(t_info *info);
 void		make_map_1D(char *buf, t_info *info);
+void		fill_struct(t_info *info);
 
 int			main(int ac, char **av)
 {
@@ -34,19 +35,25 @@ int			main(int ac, char **av)
 	{
 		while (av[++i])
 		{
-			info = malloc(1 * sizeof (t_info));
-			info->file = av[1];
-			make_param_line(buf, info);
-			free(buf);
-			map_info(info);
-			make_map_1D(buf, info);
-			ft_gettab(info);
-			free(buf);
+			fill_struct(info);
+			check_map(info);
 		}
 	}
 	else
 		buf = ft_readin();
 	return (PASS);
+}
+
+void		fill_struct(t_info *info)
+{
+	info = malloc(1 * sizeof (t_info));
+	info->file = av[1];
+	make_param_line(buf, info);
+	free(buf);
+	map_info(info);
+	make_map_1D(buf, info);
+	ft_gettab(info);
+	free(buf);
 }
 
 void		make_param_line(char *buf, t_info *info)
