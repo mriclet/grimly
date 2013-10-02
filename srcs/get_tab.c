@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:24:22 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/01 19:14:25 by mriclet          ###   ########.fr       */
+/*   Updated: 2013/10/02 15:03:53 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include		<sys/types.h>
 #include		<sys/uio.h>
 #include		<unistd.h>
+#include		<stdio.h>
 
 #include		"grimly.h"
 
@@ -29,6 +30,7 @@ t_info			*ft_gettab(t_info *info)
 	k = 0;
 	info->map = malloc(info->nb_lines * sizeof(char));
 	info->map[j] = ft_malloc(info->nb_cols * sizeof(char));
+	printf("%s", info->map[j]);
 	while (info->str[i])
 	{
 		if (info->str[i] == '\n')

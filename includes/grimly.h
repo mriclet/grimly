@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:21:19 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/02 14:09:33 by mriclet          ###   ########.fr       */
+/*   Updated: 2013/10/02 14:54:28 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #define		FAIL		-1
 #define		BUFF_SIZE	512
 
+void				ft_getway(t_info *info);
 void				fill_struct(t_info *info, char *buf, char **av);
 int					check_map(t_info *info);
 /*ALL*/

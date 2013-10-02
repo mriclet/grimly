@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/02 14:42:17 by mriclet          ###   ########.fr       */
+/*   Updated: 2013/10/02 15:01:56 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,13 @@ int			main(int ac, char **av)
 		{
 			fill_struct(info, buf, av);
 			check_map(info);
+			ft_getway(info);
 		}
 	}
 	else if (ac <= 1)
 	{
 		info = ft_readin();
+		check_map(info);
 	}
 	return (PASS);
 }
