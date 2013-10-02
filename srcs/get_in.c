@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/01 19:31:43 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/01 20:02:21 by mriclet          ###   ########.fr       */
+/*   Updated: 2013/10/02 12:02:32 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char		*ft_addstr(char *str, char *add)
 	return (ret);
 }
 
-char		*ft_readin()
+char		*ft_readin(void)
 {
 	char	buff[BUFF_SIZE];
 	char	*str;
