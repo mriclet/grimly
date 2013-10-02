@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:17:46 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/02 13:42:25 by mriclet          ###   ########.fr       */
+/*   Updated: 2013/10/02 14:42:17 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 void		make_param_line(char *buf, t_info *info);
 void		map_info(t_info *info);
 void		make_map_1D(char *buf, t_info *info);
-void		fill_struct(t_info *info, char *buf, char **av);
 
 int			main(int ac, char **av)
 {
@@ -39,15 +38,18 @@ int			main(int ac, char **av)
 			check_map(info);
 		}
 	}
-	else
-		buf = ft_readin();
+	else if (ac <= 1)
+	{
+		info = ft_readin();
+	}
 	return (PASS);
 }
 
 void		fill_struct(t_info *info, char *buf, char **av)
 {
 	info = malloc(1 * sizeof (t_info));
-	info->file = av[1];
+	if (av != NULL)
+		info->file = av[1];
 	make_param_line(buf, info);
 	map_info(info);
 	make_map_1D(buf, info);
@@ -63,9 +65,12 @@ void		make_param_line(char *buf, t_info *info)
 
 	i = 0;
 	j = 0;
-	buf = (char*)malloc(18 * sizeof (*buf));
-	fd = open(info->file, O_RDWR);
-	read(fd, buf, 18);
+	if (info->file != NULL)
+	{
+		buf = (char*)malloc(18 * sizeof (*buf));
+		fd = open(info->file, O_RDWR);
+		read(fd, buf, 18);
+	}
 	while (buf[i] != '\n')
 		i++;
 	info->param_line = malloc(sizeof(char) * i);
@@ -86,9 +91,12 @@ void		make_map_1D(char *buf, t_info *info)
 
 	i = 0;
 	j = 0;
-	buf = (char*)malloc(sizeof (*buf) * TOT_SIZE);
-	fd = open(info->file, O_RDWR);
-	read(fd, buf, TOT_SIZE);
+	if (info->file != NULL)
+	{
+		buf = (char*)malloc(sizeof (*buf) * TOT_SIZE);
+		fd = open(info->file, O_RDWR);
+		read(fd, buf, TOT_SIZE);
+	}
 	while (buf[i] != '\n')
 		i++;
 	i++;

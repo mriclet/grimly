@@ -6,7 +6,7 @@
 #    By: jblanche <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/09/25 12:42:57 by jblanche          #+#    #+#              #
-#    Updated: 2013/10/01 20:16:37 by mriclet          ###   ########.fr        #
+#    Updated: 2013/10/02 14:12:37 by mriclet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ HDRS = ./includes/
 LOBJS = ft_putchar.o ft_putnbr.o ft_putstr.o ft_strcmp.o ft_strlen.o \
 		ft_swap.o ft_char_to_int.o
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 

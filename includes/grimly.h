@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 14:21:19 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/02 13:43:25 by mriclet          ###   ########.fr       */
+/*   Updated: 2013/10/02 14:09:33 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #define		FAIL		-1
 #define		BUFF_SIZE	512
 
+void				fill_struct(t_info *info, char *buf, char **av);
 int					check_map(t_info *info);
 /*ALL*/
 void				ft_putstr(char *str);
@@ -27,7 +28,7 @@ void				ft_putchar(char c);
 int					ft_strlen(char *str);
 /*ft_liballoc*/
 char				*ft_addstr(char *str, char *add);
-char				*ft_readin();
+t_info				*ft_readin();
 char				*ft_malloc(size_t size);
 /*creat_map*/
 t_info				*ft_gettab(t_info *info);

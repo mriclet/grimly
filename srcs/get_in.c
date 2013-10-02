@@ -6,7 +6,7 @@
 /*   By: mriclet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/01 19:31:43 by mriclet           #+#    #+#             */
-/*   Updated: 2013/10/02 12:02:32 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/02 14:42:31 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,25 @@ char		*ft_addstr(char *str, char *add)
 	while (str[++i])
 		ret[i] = str[i];
 	while (add[++j])
-		ret[i + j] = str[j];
+		ret[i + j] = add[j];
 	return (ret);
 }
 
-char		*ft_readin(void)
+t_info		*ft_readin(void)
 {
+	t_info	*info;
 	char	buff[BUFF_SIZE];
 	char	*str;
 	int		noct;
 
 	noct = BUFF_SIZE;
-	str = "";
-	while (1)
+	str = malloc(BUFF_SIZE * sizeof (char));
+	while (noct == BUFF_SIZE)
 	{
 		noct = read(0, buff, BUFF_SIZE);
 		buff[noct] = 0;
 		str = ft_addstr(str, buff);
 	}
-	return (str);
+	fill_struct(info, str, NULL);
+	return (info);
 }

@@ -6,11 +6,12 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/10/02 11:49:21 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/02 14:42:22 by mriclet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "grimly.h"
+
 int		store_param(t_info *info, int i);
 void	store_nb_cols(t_info *info);
 
