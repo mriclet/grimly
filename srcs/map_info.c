@@ -6,12 +6,13 @@
 /*   By: jblanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/09/30 16:15:11 by jblanche          #+#    #+#             */
-/*   Updated: 2013/10/01 18:07:41 by jblanche         ###   ########.fr       */
+/*   Updated: 2013/10/02 11:49:21 by jblanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "grimly.h"
-void	store_param(t_info *info, int i);
+int		store_param(t_info *info, int i);
+void	store_nb_cols(t_info *info);
 
 void	map_info(t_info *info)
 {
@@ -22,9 +23,9 @@ void	map_info(t_info *info)
 	i = 0;
 	while (info->param_line[i] != '\n')
 		i++;
-	info->nb_cols = i;
 	i--;
-	store_param(info, i);
+	i = store_param(info, i);
+	store_nb_cols(info);
 	length_line = 0;
 	while (info->param_line[length_line] != 'x')
 		length_line++;
@@ -39,7 +40,32 @@ void	map_info(t_info *info)
 	free(nb_lines);
 }
 
-void	store_param(t_info *info, int i)
+void	store_nb_cols(t_info *info)
+{
+	char	*nb_cols;
+	int		length_cols;
+	int		j;
+	int		i;
+
+	i = 0;
+	length_cols = 0;
+	while (info->param_line[i])
+		i++;
+	while (info->param_line[i] != 'x')
+	{
+		length_cols++;
+		i--;
+	}
+	j = 0;
+	i++;
+	nb_cols = (char*)malloc(sizeof (*nb_cols) * (length_cols -= 7));
+	while (j < length_cols)
+		nb_cols[j++] = info->param_line[i++];
+	info->nb_cols = ft_char_to_int(nb_cols);
+	free(nb_cols);
+}
+
+int		store_param(t_info *info, int i)
 {
 	info->param = malloc(sizeof (char) * 4);
 	info->param[4] = info->param_line[i--];
@@ -47,4 +73,5 @@ void	store_param(t_info *info, int i)
 	info->param[2] = info->param_line[i--];
 	info->param[1] = info->param_line[i--];
 	info->param[0] = info->param_line[i--];
+	return (i);
 }
